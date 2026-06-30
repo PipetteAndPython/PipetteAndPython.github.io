@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula Uriza | Portfolio Analista de Datos Clínicos & Pharma</title>
+    <title>Paula Uriza | Portafolio de Analítica de Datos Clínicos & Pharma</title>
+    <!-- Tailwind CSS por CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        clinicalDark: '#0B0F19', // Fondo oscuro azulado profundo
-                        clinicalCard: '#161F30', // Fondo de las tarjetas
-                        neonAzul: '#00F0FF',     // Azul neón/ciano
-                        neonVioleta: '#9D4EDD',  // Violeta neón
+                        pharmaDark: '#0F172A',   // Fondo azul grisáceo muy oscuro y sobrio (Slate 900)
+                        pharmaCard: '#1E293B',   // Fondo de tarjetas (Slate 800)
+                        pharmaBlue: '#0284C7',   // Azul institucional/clínico (Sky 600)
+                        pharmaAccent: '#38BDF8', // Azul claro para sutiles acentos
                     }
                 }
             }
         }
     </script>
+    <!-- Iconos profesionales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilo para mantener la proporción de los videos de YouTube/Loom (16:9) */
         .video-responsive {
             position: relative;
-            padding-bottom: 56.25%; /* Proporción 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -38,146 +39,174 @@
         }
     </style>
 </head>
-<body class="bg-clinicalDark text-gray-100 font-sans antialiased selection:bg-neonAzul selection:text-clinicalDark">
+<body class="bg-pharmaDark text-slate-100 font-sans antialiased selection:bg-pharmaBlue selection:text-white">
 
-    <nav class="fixed top-0 left-0 w-full z-50 bg-clinicalDark/80 backdrop-blur-md border-b border-gray-800">
+    <!-- ========================================== -->
+    <!-- 1. NAVBAR (BARRA DE NAVEGACIÓN SOBRIA)      -->
+    <!-- ========================================== -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-pharmaDark/90 backdrop-blur-sm border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neonAzul to-neonVioleta">
-                        PAULA URIZA
+                    <a href="#" class="text-lg font-semibold tracking-wide text-white">
+                        PAULA <span class="text-pharmaAccent">URIZA</span>
                     </a>
                 </div>
+                <!-- Menú Escritorio -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#sobre-mi" class="hover:text-neonAzul transition-colors duration-300 font-medium">Sobre mí</a>
-                        <a href="#proyectos" class="hover:text-neonAzul transition-colors duration-300 font-medium">Proyectos</a>
-                        <a href="#contacto" class="hover:text-neonVioleta transition-colors duration-300 font-medium">Contacto</a>
+                    <div class="ml-10 flex items-baseline space-x-8 text-sm tracking-wide">
+                        <a href="#sobre-mi" class="text-slate-300 hover:text-white transition-colors duration-200">Sobre mí</a>
+                        <a href="#proyectos" class="text-slate-300 hover:text-white transition-colors duration-200">Proyectos</a>
+                        <a href="#contacto" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-white transition-colors duration-200 border border-slate-700">Contacto</a>
                     </div>
                 </div>
+                <!-- Menú Móvil -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                    <button id="mobile-menu-button" class="text-slate-400 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-clinicalCard border-b border-gray-800 px-4 pt-2 pb-4 space-y-2">
-            <a href="#sobre-mi" class="block hover:text-neonAzul py-2 font-medium">Sobre mí</a>
-            <a href="#proyectos" class="block hover:text-neonAzul py-2 font-medium">Proyectos</a>
-            <a href="#contacto" class="block hover:text-neonVioleta py-2 font-medium">Contacto</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-pharmaCard border-b border-slate-800 px-4 pt-2 pb-4 space-y-2 text-sm">
+            <a href="#sobre-mi" class="block text-slate-300 hover:text-white py-2">Sobre mí</a>
+            <a href="#proyectos" class="block text-slate-300 hover:text-white py-2">Proyectos</a>
+            <a href="#contacto" class="block text-slate-300 hover:text-white py-2">Contacto</a>
         </div>
     </nav>
 
-    <header class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neonAzul/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neonVioleta/10 rounded-full blur-3xl"></div>
+    <!-- ========================================== -->
+    <!-- 2. HERO SECTION (CON FOTO PROFESIONAL)     -->
+    <!-- ========================================== -->
+    <header class="min-h-screen flex items-center pt-24 pb-12 bg-gradient-to-b from-pharmaDark to-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Columna Izquierda: Textos de presentación -->
+                <div class="md:col-span-7 text-center md:text-left order-2 md:order-1">
+                    <span class="inline-block px-3 py-1 text-xs font-medium tracking-wider text-pharmaAccent uppercase bg-pharmaBlue/10 rounded border border-pharmaBlue/20 mb-4">
+                        Data Analyst | Clinical & Pharma Specialist
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
+                        Hola, soy Paula Uriza. Transformo datos para tomar mejores decisiones.
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+                        Especializada en el análisis de variables sanitarias, optimización de métricas de salud y diseño de soluciones analíticas de alta fidelidad para la industria farmacéutica y médica.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4">
+                        <a href="#proyectos" class="w-full sm:w-auto px-6 py-2.5 bg-pharmaBlue hover:bg-sky-700 text-white font-medium rounded text-sm shadow transition-colors duration-200 text-center">
+                            Ver Proyectos
+                        </a>
+                        <a href="https://linkedin.com/in/TU_PERFIL" target="_blank" class="w-full sm:w-auto px-6 py-2.5 border border-slate-700 hover:bg-slate-850 text-slate-300 hover:text-white font-medium rounded text-sm transition-all duration-200 text-center">
+                            <i class="fa-brands fa-linkedin mr-2 text-pharmaAccent"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
 
-        <div class="max-w-4xl mx-auto px-4 text-center z-10">
-            <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-neonAzul uppercase bg-neonAzul/10 rounded-full border border-neonAzul/30 mb-6">
-                Clinical & Pharma Data Analyst
-            </span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
-                Hola, soy <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonAzul to-neonVioleta">Paula Uriza</span>.<br>
-                Transformo datos para tomar mejores decisiones.
-            </h1>
-            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Especializada en analizar variables clínicas, optimizar pipelines de datos de salud y diseñar dashboards de alto impacto para la industria farmacéutica y médica.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#proyectos" class="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-neonAzul to-neonVioleta text-clinicalDark font-bold rounded-lg shadow-lg hover:shadow-neonAzul/20 hover:scale-105 transition-all duration-300">
-                    <i class="fa-solid fa-chart-column mr-2"></i> Ver Proyectos
-                </a>
-                <a href="https://linkedin.com/in/TU_PERFIL" target="_blank" class="w-full sm:w-auto px-8 py-3 border border-gray-700 hover:border-neonVioleta text-gray-300 hover:text-white font-medium rounded-lg hover:scale-105 transition-all duration-300">
-                    <i class="fa-brands fa-linkedin mr-2 text-neonVioleta"></i> LinkedIn
-                </a>
+                <!-- Columna Derecha: Tu Foto Profesional -->
+                <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden border-2 border-slate-700 shadow-2xl bg-slate-800">
+                        <!-- ⚠️ REEMPLAZA 'mi-foto.jpg' CON TU FOTO REAL (Leé la explicación abajo para saber cómo subirla) -->
+                        <img src="mi-foto.jpg" alt="Paula Uriza" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
 
-    <section id="sobre-mi" class="py-24 border-t border-gray-950 bg-gradient-to-b from-clinicalDark to-clinicalCard/30">
+    <!-- ========================================== -->
+    <!-- 3. SECCIÓN SOBRE MÍ                        -->
+    <!-- ========================================== -->
+    <section id="sobre-mi" class="py-20 bg-slate-900 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <span class="text-neonAzul">&lt;/&gt;</span> Sobre mí
-            </h2>
-            <div class="bg-clinicalCard border border-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl">
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Me apasiona cerrar la brecha entre los datos crudos del entorno sanitario y las decisiones estratégicas de negocio. Mi enfoque combina rigurosidad estadística con una fuerte visualización de datos, asegurando el cumplimiento de normativas y la claridad en métricas críticas de salud.
+            <h2 class="text-2xl font-bold mb-6 text-white tracking-tight">Sobre mí</h2>
+            <div class="text-slate-300 space-y-4 leading-relaxed text-sm sm:text-base">
+                <p>
+                    Me dedico a tender puentes entre la complejidad de los datos sanitarios y las necesidades estratégicas del negocio. Mi enfoque prioriza la rigurosidad estadística, la claridad visual y el estricto cumplimiento de normativas asociadas al entorno clínico.
                 </p>
-                <p class="text-gray-300 leading-relaxed">
-                    Tengo experiencia modelando datos complejos y estructurando arquitecturas limpias para responder preguntas críticas: desde la optimización de ensayos clínicos hasta el rendimiento comercial de líneas terapéuticas.
+                <p>
+                    Cuento con experiencia en el modelado y estructuración de arquitecturas de datos orientadas a resolver interrogantes clave, optimizando procesos desde el seguimiento de ensayos clínicos hasta el rendimiento comercial de líneas terapéuticas.
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="proyectos" class="py-24 bg-clinicalDark">
+    <!-- ========================================== -->
+    <!-- 4. SECCIÓN DE PROYECTOS (ESTILO SOBRIO)    -->
+    <!-- ========================================== -->
+    <section id="proyectos" class="py-20 bg-pharmaDark">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Proyectos Destacados</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-neonAzul to-neonVioleta mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4">Demostraciones en video de mis soluciones analíticas y dashboards interactivos.</p>
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-white tracking-tight">Proyectos Destacados</h2>
+                <p class="text-slate-400 text-sm mt-2">Casos de estudio y demostraciones en video de mis soluciones analíticas.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div class="bg-clinicalCard border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:border-neonAzul/40 transition-all duration-300 flex flex-col h-full">
+                <!-- PROYECTO 1 -->
+                <div class="bg-pharmaCard border border-slate-800 rounded-xl overflow-hidden flex flex-col h-full shadow-sm hover:border-slate-700 transition-all duration-200">
                     <div class="video-responsive">
+                        <!-- ⚠️ REEMPLAZA CON EL LINK EMBED DE TU VIDEO -->
                         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Proyecto 1" allowfullscreen></iframe>
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2 text-white">Análisis de Adherencia en Ensayos Clínicos</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-grow">
-                            El laboratorio presentaba inconsistencias en el seguimiento de pacientes en Fase III. Desarrollé un modelo de datos que unificó registros médicos electrónicos (EHR), identificando patrones de deserción con un 88% de precisión.
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-semibold mb-2 text-white">Análisis de Adherencia en Ensayos Clínicos</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">
+                            Unificación de registros médicos electrónicos (EHR) para identificar patrones de deserción de pacientes en Fase III, optimizando el seguimiento del laboratorio.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-neonAzul text-neonAzul">Power BI</span>
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-gray-600 text-gray-300">Python</span>
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-gray-600 text-gray-300">DAX</span>
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-gray-600 text-gray-300">SQL</span>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-pharmaAccent border border-slate-700">Power BI</span>
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-slate-300 border border-slate-700">Python</span>
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-slate-300 border border-slate-700">DAX</span>
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-slate-300 border border-slate-700">SQL</span>
                         </div>
-                        <a href="https://github.com/TU_USUARIO/PROYECTO_1" target="_blank" class="block w-full text-center py-2 px-4 bg-clinicalDark hover:bg-gray-800 border border-gray-700 hover:border-neonAzul text-sm font-semibold rounded-lg transition-colors duration-300">
-                            <i class="fa-brands fa-github mr-2"></i> Ver Repositorio .pbix
+                        <a href="https://github.com/TU_USUARIO/PROYECTO_1" target="_blank" class="block w-full text-center py-2 bg-slate-900 hover:bg-slate-950 border border-slate-700 text-xs font-medium rounded text-slate-200 transition-colors duration-200">
+                            <i class="fa-brands fa-github mr-2"></i> Ver Repositorio
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-clinicalCard border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:border-neonVioleta/40 transition-all duration-300 flex flex-col h-full">
+                <!-- PROYECTO 2 -->
+                <div class="bg-pharmaCard border border-slate-800 rounded-xl overflow-hidden flex flex-col h-full shadow-sm hover:border-slate-700 transition-all duration-200">
                     <div class="video-responsive">
+                        <!-- ⚠️ REEMPLAZA CON EL LINK EMBED DE TU VIDEO -->
                         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Proyecto 2" allowfullscreen></iframe>
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2 text-white">Dashboard de Rendimiento Comercial Pharma</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-grow">
-                            Falta de visibilidad sobre el ROI por línea terapéutica en el mercado LATAM. Creé un dashboard dinámico que cruzó cuotas de distribuidores y auditorías de recetas, reduciendo el desabastecimiento regional.
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-semibold mb-2 text-white">Rendimiento Comercial Farmacéutico</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">
+                            Dashboard dinámico enfocado en el cruce de cuotas de distribuidores y auditoría de recetas médicas para mitigar el desabastecimiento de líneas terapéuticas.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-neonVioleta text-neonVioleta">Power BI</span>
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-gray-600 text-gray-300">DAX</span>
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-gray-600 text-gray-300">SQL Server</span>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-pharmaAccent border border-slate-700">Power BI</span>
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-slate-300 border border-slate-700">DAX</span>
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-slate-300 border border-slate-700">SQL Server</span>
                         </div>
-                        <a href="https://github.com/TU_USUARIO/PROYECTO_2" target="_blank" class="block w-full text-center py-2 px-4 bg-clinicalDark hover:bg-gray-800 border border-gray-700 hover:border-neonVioleta text-sm font-semibold rounded-lg transition-colors duration-300">
-                            <i class="fa-brands fa-github mr-2"></i> Ver Repositorio .pbix
+                        <a href="https://github.com/TU_USUARIO/PROYECTO_2" target="_blank" class="block w-full text-center py-2 bg-slate-900 hover:bg-slate-950 border border-slate-700 text-xs font-medium rounded text-slate-200 transition-colors duration-200">
+                            <i class="fa-brands fa-github mr-2"></i> Ver Repositorio
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-clinicalCard border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:border-neonAzul/40 transition-all duration-300 flex flex-col h-full">
+                <!-- PROYECTO 3 -->
+                <div class="bg-pharmaCard border border-slate-800 rounded-xl overflow-hidden flex flex-col h-full shadow-sm hover:border-slate-700 transition-all duration-200">
                     <div class="video-responsive">
+                        <!-- ⚠️ REEMPLAZA CON EL LINK EMBED DE TU VIDEO -->
                         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Proyecto 3" allowfullscreen></iframe>
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2 text-white">Monitoreo de Farmacovigilancia y Eventos Adversos</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-grow">
-                            Necesidad de automatizar reportes para agencias regulatorias. Conecté bases de datos MySQL mediante flujos ETL y generé alertas visuales que priorizaron la severidad de eventos según la codificación MedDRA.
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-semibold mb-2 text-white">Monitoreo de Farmacovigilancia</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">
+                            Automatización de reportes mediante flujos ETL con alertas visuales integradas para priorizar eventos adversos regulatorios basados en codificación MedDRA.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-neonAzul text-neonAzul">Power BI</span>
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-gray-600 text-gray-300">SQL</span>
-                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-clinicalDark border border-gray-600 text-gray-300">ETL</span>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-pharmaAccent border border-slate-700">Power BI</span>
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-slate-300 border border-slate-700">SQL</span>
+                            <span class="px-2 py-0.5 text-xs rounded bg-pharmaDark text-slate-300 border border-slate-700">MedDRA</span>
                         </div>
-                        <a href="https://github.com/TU_USUARIO/PROYECTO_3" target="_blank" class="block w-full text-center py-2 px-4 bg-clinicalDark hover:bg-gray-800 border border-gray-700 hover:border-neonAzul text-sm font-semibold rounded-lg transition-colors duration-300">
-                            <i class="fa-brands fa-github mr-2"></i> Ver Repositorio .pbix
+                        <a href="https://github.com/TU_USUARIO/PROYECTO_3" target="_blank" class="block w-full text-center py-2 bg-slate-900 hover:bg-slate-950 border border-slate-700 text-xs font-medium rounded text-slate-200 transition-colors duration-200">
+                            <i class="fa-brands fa-github mr-2"></i> Ver Repositorio
                         </a>
                     </div>
                 </div>
@@ -186,45 +215,30 @@
         </div>
     </section>
 
-    <footer id="contacto" class="bg-clinicalCard border-t border-gray-800 py-12">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold mb-4 text-white">¿Te interesa mi perfil? Hablemos.</h2>
-            <p class="text-gray-400 mb-8 max-w-md mx-auto text-sm sm:text-base">Estoy disponible para oportunidades como Analista de Datos en biotecnología, laboratorios farmacéuticos y entornos de salud corporativa.</p>
+    <!-- ========================================== -->
+    <!-- 5. FOOTER / CONTACTO                       -->
+    <!-- ========================================== -->
+    <footer id="contacto" class="bg-slate-900 border-t border-slate-800 py-12 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-xl font-bold text-white mb-2">Contacto</h2>
+            <p class="text-slate-400 text-sm mb-6 max-w-sm mx-auto">Disponible para integrarme en equipos de BI clínicos, laboratorios y proyectos de consultoría analítica en salud.</p>
             
-            <div class="flex justify-center items-center gap-8 mb-8">
-                <a href="mailto:tu-email@correo.com" class="text-gray-400 hover:text-neonAzul text-2xl transition-colors duration-300" title="Enviar un correo electrónico">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-                <a href="https://linkedin.com/in/TU_PERFIL" target="_blank" class="text-gray-400 hover:text-neonVioleta text-2xl transition-colors duration-300" title="Visitar perfil de LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/TU_USUARIO" target="_blank" class="text-gray-400 hover:text-neonAzul text-2xl transition-colors duration-300" title="Visitar perfil de GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
+            <div class="flex justify-center items-center gap-6 mb-8 text-xl">
+                <a href="mailto:tu-email@correo.com" class="text-slate-400 hover:text-pharmaAccent transition-colors" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/TU_PERFIL" target="_blank" class="text-slate-400 hover:text-pharmaAccent transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/TU_USUARIO" target="_blank" class="text-slate-400 hover:text-pharmaAccent transition-colors" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
 
-            <p class="text-xs text-gray-600">
-                &copy; 2026 Paula Uriza. Desarrollado con Tailwind CSS. Todos los derechos reservados.
-            </p>
+            <p class="text-xs text-slate-600">&copy; 2026 Paula Uriza. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- LOGICA DE MENÚ MÓVIL -->
     <script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
-
-        // Escucha el click del botón hamburguesa para abrir/cerrar el menú en celulares
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Cierra el menú automáticamente cuando el usuario hace click en un enlace
-        const menuLinks = menu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
     </script>
 </body>
 </html>
