@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paula Uriza — Analista de Datos Clínicos & Pharma</title>
+    <!-- Tailwind CSS por CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        danteDark: '#121212',     // Fondo carbón mate minimalista
+                        danteBorder: '#262626',   // Líneas de separación muy sutiles
+                        danteMuted: '#A3A3A3',    // Gris para textos secundarios o etiquetas
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuente Inter para lograr ese aspecto editorial limpio -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background-color: #1a1a1a;
+        }
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="bg-danteDark text-zinc-100 antialiased selection:bg-zinc-800 selection:text-white">
+
+    <!-- ========================================== -->
+    <!-- 1. NAVBAR (ESTILO DANTE: PLANO Y MINIMAL) -->
+    <!-- ========================================== -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-danteDark/90 backdrop-blur-sm border-b border-danteBorder">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <div>
+                    <a href="#" class="text-sm font-medium tracking-tight text-white uppercase">
+                        Paula Uriza
+                    </a>
+                </div>
+                <!-- Menú Escritorio -->
+                <div class="hidden md:block">
+                    <div class="flex space-x-8 text-xs uppercase tracking-widest text-danteMuted">
+                        <a href="#sobre-mi" class="hover:text-white transition-colors duration-200">Sobre mí</a>
+                        <a href="#proyectos" class="hover:text-white transition-colors duration-200">Proyectos</a>
+                        <a href="#contacto" class="hover:text-white transition-colors duration-200">Contacto</a>
+                    </div>
+                </div>
+                <!-- Menú Móvil -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-zinc-400 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Dropdown Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-danteDark border-b border-danteBorder px-6 py-4 space-y-3 text-xs uppercase tracking-widest text-danteMuted">
+            <a href="#sobre-mi" class="block hover:text-white">Sobre mí</a>
+            <a href="#proyectos" class="block hover:text-white">Proyectos</a>
+            <a href="#contacto" class="block hover:text-white">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- 2. HERO SECTION (FOTO RECTANGULAR + TEXTO) -->
+    <!-- ========================================== -->
+    <header class="min-h-screen flex items-center pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-6 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+                
+                <!-- Textos Principales -->
+                <div class="md:col-span-8 space-y-6 order-2 md:order-1 text-left">
+                    <p class="text-xs uppercase tracking-widest text-danteMuted">
+                        Clinical & Pharma Data Analyst
+                    </p>
+                    <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-zinc-100 leading-tight">
+                        Transformo datos del entorno sanitario para respaldar decisiones estratégicas de negocio.
+                    </h1>
+                    <p class="text-sm sm:text-base text-danteMuted leading-relaxed max-w-xl">
+                        Especializada en el análisis de variables clínicas, optimización de pipelines de información médica y diseño de soluciones analíticas sofisticadas para la industria farmacéutica y de la salud.
+                    </p>
+                    <div class="pt-4 flex items-center gap-6 text-xs uppercase tracking-widest">
+                        <a href="#proyectos" class="text-white hover:underline underline-offset-4 font-medium">
+                            Ver proyectos →
+                        </a>
+                        <a href="https://linkedin.com/in/TU_PERFIL" target="_blank" class="text-danteMuted hover:text-white transition-colors">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Tu Foto Profesional (Efecto plano y sobrio de Dante) -->
+                <div class="md:col-span-4 flex justify-start md:justify-end order-1 md:order-2">
+                    <div class="w-48 h-64 sm:w-56 sm:h-76 overflow-hidden grayscale bg-zinc-800 border border-danteBorder rounded">
+                        <!-- ⚠️ REEMPLAZA 'mi-foto.jpg' CON TU ARCHIVO DE IMAGEN -->
+                        <img src="foto.jpg" alt="Paula Uriza" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- 3. SECCIÓN SOBRE MÍ                        -->
+    <!-- ========================================== -->
+    <section id="sobre-mi" class="py-16 border-t border-danteBorder">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-xs uppercase tracking-widest text-danteMuted mb-6">01 / Perfil Profesional</p>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+                <div class="md:col-span-4">
+                    <h2 class="text-lg font-medium text-zinc-100 tracking-tight">Sobre mí</h2>
+                </div>
+                <div class="md:col-span-8 text-sm sm:text-base text-danteMuted space-y-4 leading-relaxed">
+                    <p>
+                        Me dedico a tender puentes entre la complejidad de los datos biomédicos y los objetivos comerciales del sector salud. Mi enfoque prioriza la rigurosidad analítica, la claridad visual y el estricto cumplimiento normativo.
+                    </p>
+                    <p>
+                        Cuento con experiencia en el modelado y estructuración de arquitecturas de datos (ETL) orientadas a resolver interrogantes clave, optimizando métricas operativas desde el monitoreo de ensayos clínicos hasta el rendimiento comercial en líneas terapéuticas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. SECCIÓN DE PROYECTOS (GRID EDITORIAL)   -->
+    <!-- ========================================== -->
+    <section id="proyectos" class="py-16 border-t border-danteBorder">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-12">
+                <p class="text-xs uppercase tracking-widest text-danteMuted mb-2">02 / Portfolio</p>
+                <h2 class="text-lg font-medium text-zinc-100 tracking-tight">Proyectos Destacados</h2>
+            </div>
+
+            <!-- Grilla de Proyectos sin tarjetas pesadas, solo líneas y espaciado pulcro -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <!-- PROYECTO 1 -->
+                <div class="space-y-4 flex flex-col h-full pb-6 border-b border-danteBorder md:border-b-0">
+                    <div class="video-responsive border border-danteBorder rounded">
+                        <!-- ⚠️ REEMPLAZA CON EL ENLACE EMBED DE TU VIDEO -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Proyecto 1" allowfullscreen></iframe>
+                    </div>
+                    <div class="flex-grow space-y-2">
+                        <h3 class="text-base font-medium text-zinc-100">Análisis de Adherencia en Ensayos Clínicos</h3>
+                        <p class="text-xs sm:text-sm text-danteMuted leading-relaxed">
+                            Unificación de registros médicos electrónicos (EHR) para identificar patrones de deserción de pacientes en Fase III, optimizando el seguimiento operativo del laboratorio.
+                        </p>
+                    </div>
+                    <!-- Etiquetas Minimalistas -->
+                    <div class="flex flex-wrap gap-2 text-[11px] text-danteMuted tracking-wider uppercase font-mono">
+                        <span>Power BI</span> — <span>Python</span> — <span>DAX</span> — <span>SQL</span>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://github.com/TU_USUARIO/PROYECTO_1" target="_blank" class="text-xs text-zinc-300 hover:text-white hover:underline underline-offset-4">
+                            Repositorio del proyecto →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 2 -->
+                <div class="space-y-4 flex flex-col h-full pb-6 border-b border-danteBorder md:border-b-0">
+                    <div class="video-responsive border border-danteBorder rounded">
+                        <!-- ⚠️ REEMPLAZA CON EL ENLACE EMBED DE TU VIDEO -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Proyecto 2" allowfullscreen></iframe>
+                    </div>
+                    <div class="flex-grow space-y-2">
+                        <h3 class="text-base font-medium text-zinc-100">Rendimiento Comercial Farmacéutico</h3>
+                        <p class="text-xs sm:text-sm text-danteMuted leading-relaxed">
+                            Diseño de un ecosistema analítico enfocado en el cruce de cuotas de distribuidores y auditorías de recetas médicas para mitigar el desabastecimiento de líneas terapéuticas en LATAM.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-[11px] text-danteMuted tracking-wider uppercase font-mono">
+                        <span>Power BI</span> — <span>DAX</span> — <span>SQL Server</span>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://github.com/TU_USUARIO/PROYECTO_2" target="_blank" class="text-xs text-zinc-300 hover:text-white hover:underline underline-offset-4">
+                            Repositorio del proyecto →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 3 -->
+                <div class="space-y-4 flex flex-col h-full">
+                    <div class="video-responsive border border-danteBorder rounded">
+                        <!-- ⚠️ REEMPLAZA CON EL ENLACE EMBED DE TU VIDEO -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Proyecto 3" allowfullscreen></iframe>
+                    </div>
+                    <div class="flex-grow space-y-2">
+                        <h3 class="text-base font-medium text-zinc-100">Monitoreo de Farmacovigilancia</h3>
+                        <p class="text-xs sm:text-sm text-danteMuted leading-relaxed">
+                            Automatización de procesos ETL con alertas visuales integradas para priorizar eventos adversos en agencias regulatorias, alineados bajo codificación internacional MedDRA.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-[11px] text-danteMuted tracking-wider uppercase font-mono">
+                        <span>Power BI</span> — <span>SQL</span> — <span>MedDRA</span> — <span>ETL</span>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://github.com/TU_USUARIO/PROYECTO_3" target="_blank" class="text-xs text-zinc-300 hover:text-white hover:underline underline-offset-4">
+                            Repositorio del proyecto →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. FOOTER / CONTACTO                       -->
+    <!-- ========================================== -->
+    <footer id="contacto" class="py-16 border-t border-danteBorder bg-zinc-950/20">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-xs uppercase tracking-widest text-danteMuted mb-6">03 / Conectemos</p>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
+                <div class="md:col-span-4">
+                    <h2 class="text-lg font-medium text-zinc-100 tracking-tight">Contacto</h2>
+                </div>
+                <div class="md:col-span-8 space-y-6">
+                    <p class="text-sm text-danteMuted leading-relaxed">
+                        Abierta a propuestas de integración en equipos de BI clínicos, laboratorios farmacéuticos y consultorías enfocadas en analítica de salud corporativa.
+                    </p>
+                    <div class="flex flex-wrap gap-6 text-xs uppercase tracking-widest font-medium">
+                        <a href="mailto:tu-email@correo.com" class="text-zinc-300 hover:text-white transition-colors">Email</a>
+                        <a href="https://linkedin.com/in/TU_PERFIL" target="_blank" class="text-zinc-300 hover:text-white transition-colors">LinkedIn</a>
+                        <a href="https://github.com/TU_USUARIO" target="_blank" class="text-zinc-300 hover:text-white transition-colors">GitHub</a>
+                    </div>
+                    <p class="text-[11px] text-zinc-600 pt-4">
+                        &copy; 2026 Paula Uriza. Inspirado en estética editorial limpia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LÓGICA DE MENÚ MÓVIL -->
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
+    </script>
+</body>
+</html>
